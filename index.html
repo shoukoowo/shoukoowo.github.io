@@ -47,7 +47,7 @@ section{padding:70px 0;border-top:1px dashed rgba(168,85,247,.45)}
 h2{font-size:clamp(26px,4vw,40px);margin-bottom:10px}
 .lead{color:var(--muted);margin:0 0 34px;max-width:52ch}
 
-.demos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.demos{align-items:start;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
 .demo{background:linear-gradient(160deg,var(--deep),#12062a);border:1.5px solid var(--violet);border-radius:22px 22px 22px 4px;padding:20px}
 .demo small{color:var(--skin);font-weight:700}
 .demo h3{font-size:18px;margin:6px 0 16px}
@@ -92,13 +92,22 @@ footer{padding:40px 0 60px;color:var(--muted);text-align:center;font-size:14px;b
 .chan strong{font:700 18px "Unbounded",sans-serif;color:var(--lilac);overflow-wrap:anywhere}
 .chan span{color:var(--muted);font-size:14px}
 .chan:hover span{color:var(--skin)}
+.demo .ficha{display:block;margin:0 0 16px;border-radius:14px;overflow:hidden;border:1.5px solid var(--blue);background:#12062a}
+.demo .ficha img{display:block;width:100%;height:230px;object-fit:contain}
+.cred a{color:var(--skin);font-weight:700}
+.fandubs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.fandub{background:linear-gradient(160deg,var(--deep),#12062a);border:1.5px solid var(--blue);border-radius:22px 22px 4px 22px;overflow:hidden}
+.fandub video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.fandub .info{padding:16px 18px 18px}
+.fandub small{color:var(--skin);font-weight:700}
+.fandub h3{font-size:17px;margin:6px 0 6px}
 .mbtn{font:700 13px "DM Sans",sans-serif;padding:7px 14px;border-radius:999px;border:2px solid var(--violet);background:var(--deep);color:var(--lilac);cursor:pointer}
 .mbtn:hover{border-color:var(--skin)}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav><b>SHOUKO</b><div><a href="#demos">Demos</a><a href="#participaciones">Participaciones</a><a href="#servicios">Servicios</a><a href="#redes">Redes</a></div></nav>
+  <nav><b>SHOUKO</b><div><a href="#demos">Demos</a><a href="#fandubs">Fandubs</a><a href="#participaciones">Participaciones</a><a href="#servicios">Servicios</a><a href="#redes">Redes</a></div></nav>
 
   <header class="hero">
     <div>
@@ -120,6 +129,17 @@ footer{padding:40px 0 60px;color:var(--muted);text-align:center;font-size:14px;b
       <article class="demo" data-src="demo.mp3"><small>Voice over</small><h3>Doblaje</h3><div class="player"><button class="play" aria-label="Reproducir Doblaje">▶</button><div class="bars" aria-hidden="true"></div></div></article>
       <article class="demo" data-src="democomic.wav"><small>Voice over</small><h3>Cómic</h3><div class="player"><button class="play" aria-label="Reproducir Cómic">▶</button><div class="bars" aria-hidden="true"></div></div></article>
       <article class="demo" data-src="Itte.wav"><small>Canto</small><h3>Itte (言って。)</h3><div class="player"><button class="play" aria-label="Reproducir Itte">▶</button><div class="bars" aria-hidden="true"></div></div><p class="cred">Canción de Yorushika · Voz: Shouko</p></article>
+      <article class="demo" data-src="NewDemoComicShouko.mp3"><small>Voice over</small><h3>Cómic · Nueva demo</h3><div class="player"><button class="play" aria-label="Reproducir Cómic, nueva demo">▶</button><div class="bars" aria-hidden="true"></div></div></article>
+      <article class="demo" data-src="Los Vaguens - California (Cover).wav"><small>Canto · Cover</small><h3>California</h3><div class="player"><button class="play" aria-label="Reproducir California (cover)">▶</button><div class="bars" aria-hidden="true"></div></div><p class="cred">Canción de Los Vaguens · Voz: Shouko</p></article>
+      <article class="demo" data-src="MEG Abi.mp3"><small>Voice over · AU de FNAFHS</small><h3>MEG (rol oficial)</h3><a class="ficha" href="Meg.png" target="_blank" rel="noopener" aria-label="Ver la ficha completa de MEG"><img src="Meg.png" alt="Ficha del personaje MEG" loading="lazy" onerror="this.parentNode.style.display='none'"></a><div class="player"><button class="play" aria-label="Reproducir MEG, AU de FNAFHS">▶</button><div class="bars" aria-hidden="true"></div></div><p class="cred">AU de FNAFHS por <a href="https://www.youtube.com/@Art_Multifandom" target="_blank" rel="noopener">@Art_Multifandom</a> · Voz: Shouko</p></article>
+    </div>
+  </section>
+
+  <section id="fandubs">
+    <h2>Fandubs</h2>
+    <p class="lead">Escenas dobladas por Shouko. Dale play para verlas.</p>
+    <div class="fandubs">
+      <article class="fandub"><video controls preload="metadata" playsinline aria-label="Fandub de Zhu Yuan" src="Zhu%20Yuan%20ZZZ.mp4"></video><div class="info"><small>Fandub · Zenless Zone Zero</small><h3>Zhu Yuan</h3></div></article>
     </div>
   </section>
 
@@ -160,7 +180,8 @@ footer{padding:40px 0 60px;color:var(--muted);text-align:center;font-size:14px;b
 </aside>
 <script>
 var CANALES=[
-  {nombre:'Guy0711',foto:'@Guy0711.jpg',url:'https://www.youtube.com/@Guy0711',tipo:'Colaboración · Cómic'}
+  {nombre:'Guy0711',foto:'@Guy0711.jpg',url:'https://www.youtube.com/@Guy0711',tipo:'Colaboración · Cómic'},
+  {nombre:'Art_Multifandom',foto:'@Art_Multifandom.jpg',url:'https://www.youtube.com/@Art_Multifandom',tipo:'Colaboración · AU de FNAFHS'}
 ];
 (function(){
   var box=document.getElementById('parts');
@@ -183,13 +204,14 @@ bg.loop=true;bg.volume=0.12;
 var musicOn=false,current=null;
 var gn=document.getElementById('gnarpy'),mb=document.getElementById('musicBtn');
 function ui(){var p=!bg.paused;gn.classList.toggle('jam',p);mb.setAttribute('aria-pressed',musicOn);mb.textContent=musicOn?'♪ Música: encendida':'♪ Música: apagada';}
-function resumeBg(){if(musicOn&&!current){bg.play().catch(function(){});}}
+function vidOn(){return Array.prototype.some.call(document.querySelectorAll('video'),function(v){return !v.paused&&!v.ended;});}
+function resumeBg(){if(musicOn&&!current&&!vidOn()){bg.play().catch(function(){});}}
 bg.addEventListener('play',ui);bg.addEventListener('pause',ui);
 mb.addEventListener('click',function(e){e.stopPropagation();musicOn=!musicOn;if(musicOn){resumeBg();}else{bg.pause();}ui();});
 var first=true;
 document.addEventListener('pointerdown',function(e){
   if(!first||e.target.closest('#musicBtn'))return;first=false;musicOn=true;
-  if(!e.target.closest('.demo'))resumeBg();ui();
+  if(!e.target.closest('.demo,.fandub'))resumeBg();ui();
 });
 document.querySelectorAll('.demo').forEach(function(d){
   var bars=d.querySelector('.bars');
@@ -203,9 +225,18 @@ document.querySelectorAll('.demo').forEach(function(d){
       audio.addEventListener('error',function(){audio=null;d.classList.remove('on');if(current===d)current=null;btn.textContent='···';setTimeout(function(){btn.textContent='▶'},1200);resumeBg();});}
     if(audio.paused){
       if(current&&current!==d)current.stopDemo();
-      current=d;bg.pause();audio.play().catch(function(){});d.classList.add('on');btn.textContent='❚❚';
+      current=d;bg.pause();document.querySelectorAll('video').forEach(function(v){v.pause();});audio.play().catch(function(){});d.classList.add('on');btn.textContent='❚❚';
     }else{stop();}
   });
+});
+document.querySelectorAll('.fandub video').forEach(function(v){
+  v.addEventListener('play',function(){
+    if(current)current.stopDemo();
+    document.querySelectorAll('video').forEach(function(o){if(o!==v)o.pause();});
+    bg.pause();
+  });
+  v.addEventListener('pause',resumeBg);
+  v.addEventListener('ended',resumeBg);
 });
 var dc=document.getElementById('dc'),dm=document.getElementById('dcmsg');
 dc.addEventListener('click',function(e){e.preventDefault();
